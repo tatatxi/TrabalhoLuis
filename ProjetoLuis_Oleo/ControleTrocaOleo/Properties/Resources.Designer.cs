@@ -59,5 +59,14 @@ namespace ControleTrocaOleo.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Provider=SQLNCLI11;Data Source=LAPTOP-SMVO19P1;Integrated Security=SSPI;Initial Catalog=trabalhoLuis.
+        /// </summary>
+        internal static string ConnectionStrings {
+            get {
+                return ResourceManager.GetString("ConnectionStrings", resourceCulture);
+            }
+        }
     }
 }

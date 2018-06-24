@@ -33,5 +33,18 @@ namespace ControleTrocaOleo.Properties {
                 return ((string)(this["Con01"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=LAPTOP-SMVO19P1;Integrated Security=SSPI;Initial C" +
+            "atalog=trabalhoLuis")]
+        public string Conexao {
+            get {
+                return ((string)(this["Conexao"]));
+            }
+            set {
+                this["Conexao"] = value;
+            }
+        }
     }
 }

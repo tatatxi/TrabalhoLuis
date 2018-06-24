@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=SQLNCLI11;Data Source=LAPTOP-SMVO19P1;Integrated Security=SSPI;Initial Catalog=trabalhoLuis</Value>
     </Setting>
+    <Setting Name="Conexao" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Provider=SQLNCLI11;Data Source=LAPTOP-SMVO19P1;Integrated Security=SSPI;Initial Catalog=trabalhoLuis</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

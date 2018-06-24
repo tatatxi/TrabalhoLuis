@@ -16,7 +16,7 @@ namespace ControleTrocaOleo.Data_Acess
 
         private SqlConnection CriarConexao()
         {
-            return new SqlConnection("Data Source=LAPTOP-SMVO19P1;Integrated Security=SSPI;Initial Catalog=trabalhoLuis");
+            return new SqlConnection("String de Conexão");
         }
 
         // Parametros  que irão para o banco de dados
@@ -74,12 +74,13 @@ namespace ControleTrocaOleo.Data_Acess
         {
             try
             {
-                // criar conexão
-                SqlConnection sqlConnection = CriarConexao();
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = Properties.Settings.Default.Conexao;
+
                 //abrir conexao
-                sqlConnection.Open();
+                con.Open();
                 //Criar o comando que vai até o banco 
-                SqlCommand sqlcommand = sqlConnection.CreateCommand();
+                SqlCommand sqlcommand = con.CreateCommand();
                 sqlcommand.CommandType = commandType;
                 sqlcommand.CommandText = textoSql;
                 sqlcommand.CommandTimeout = 3600;

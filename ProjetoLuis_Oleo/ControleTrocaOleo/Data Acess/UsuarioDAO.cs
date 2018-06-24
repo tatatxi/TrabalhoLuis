@@ -13,7 +13,7 @@ namespace ControleTrocaOleo.Data_Acess
         public static DataTable CarregarDados()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = Properties.Settings.Default.Con01;
+            con.ConnectionString = Properties.Settings.Default.Conexao;
             DataTable dt = new DataTable();
 
             try

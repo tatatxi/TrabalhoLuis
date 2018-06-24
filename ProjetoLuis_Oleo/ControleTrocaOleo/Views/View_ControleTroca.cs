@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -17,6 +18,99 @@ namespace ControleTrocaOleo
         {
             InitializeComponent();
 
+        }
+
+        //CRIAR A CONEXÃO
+
+        private SqlConnection CriarConexao()
+        {
+            return new SqlConnection("Provider=SQLNCLI11;Data Source=LAPTOP-SMVO19P1;Integrated Security=SSPI;Initial Catalog=trabalhoLuis");
+        }
+
+        // Parametros  que irão para o banco de dados
+        SqlParameterCollection SqlParameterCollection = new SqlCommand().Parameters;
+
+
+        public void LimparParametros()
+        {
+            SqlParameterCollection.Clear();
+        }
+
+        public void AdicionarParametros(string nomeParametro, object valorParametro)
+        {
+            SqlParameterCollection.Add(new SqlParameter(nomeParametro, valorParametro));
+        }
+
+        // Persistencia - inserir, alterar, excluir.
+
+        public object ExecutarPercistencia(CommandType commandType, string textoSql)
+        {
+            try
+            {
+                //criar conexao
+
+                SqlConnection sqlConnection = CriarConexao();
+                //abrir a conexao 
+                sqlConnection.Open();
+                //Criar o comando que vai levar as informacoes ate o banco 
+                SqlCommand sqlCommand = sqlConnection.CreateCommand();
+                //colocar as coisas dentro do comando 
+                sqlCommand.CommandType = commandType;
+                sqlCommand.CommandText = textoSql;
+                sqlCommand.CommandTimeout = 3600;
+
+                foreach (SqlParameter sqlParameter in SqlParameterCollection)
+                {
+
+                    sqlCommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                }
+                //executar o comando 
+
+                return sqlCommand.ExecuteScalar();
+
+            }
+
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        public DataTable ExecutarConsulta(CommandType commandType, string textoSql)
+        {
+            try
+            {
+                // criar conexão
+                SqlConnection sqlConnection = CriarConexao();
+                //abrir conexao
+                sqlConnection.Open();
+                //Criar o comando que vai até o banco 
+                SqlCommand sqlcommand = sqlConnection.CreateCommand();
+                sqlcommand.CommandType = commandType;
+                sqlcommand.CommandText = textoSql;
+                sqlcommand.CommandTimeout = 3600;
+
+                //adicionar os parametros
+                foreach (SqlParameter sqlParameter in SqlParameterCollection)
+                {
+                    sqlcommand.Parameters.Add(new SqlParameter(sqlParameter.ParameterName, sqlParameter.Value));
+                }
+
+                //CRIAR UM ADAPTADOR 
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlcommand);
+
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                return dataTable;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         private void lblEmailCliente_Click(object sender, EventArgs e)
@@ -114,7 +208,8 @@ namespace ControleTrocaOleo
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = Properties.Settings.Default.Con01;
+            con.ConnectionString = Properties.Settings.Default.Conexao;
+
             try
             {
                 con.Open();

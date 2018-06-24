@@ -8,3 +8,10 @@ c:\users\niick\documents\visual studio 2017\Projects\ProjetoLuis_Oleo\ControleTr
 c:\users\niick\documents\visual studio 2017\Projects\ProjetoLuis_Oleo\ControleTrocaOleo\bin\Debug\ControleTrocaOleo.pdb
 c:\users\niick\documents\visual studio 2017\Projects\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.exe
 c:\users\niick\documents\visual studio 2017\Projects\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.pdb
+C:\Users\niick\Documents\GitHub\TrabalhoLuis\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.csprojResolveAssemblyReference.cache
+C:\Users\niick\Documents\GitHub\TrabalhoLuis\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.frmControleTroca.resources
+C:\Users\niick\Documents\GitHub\TrabalhoLuis\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.frmLogin.resources
+C:\Users\niick\Documents\GitHub\TrabalhoLuis\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.Properties.Resources.resources
+C:\Users\niick\Documents\GitHub\TrabalhoLuis\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.csproj.GenerateResource.Cache
+C:\Users\niick\Documents\GitHub\TrabalhoLuis\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.exe
+C:\Users\niick\Documents\GitHub\TrabalhoLuis\ProjetoLuis_Oleo\ControleTrocaOleo\obj\Debug\ControleTrocaOleo.pdb

@@ -16,7 +16,7 @@ namespace ControleTrocaOleo.Model
 
         public Oleo Oleo { get; set; }
 
-        public int QtdLitros { get; set; }
+        public double QtdLitros { get; set; }
 
         public ServicoTrocaOleo()
         {

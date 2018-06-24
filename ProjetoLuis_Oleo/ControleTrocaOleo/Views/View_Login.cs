@@ -35,11 +35,11 @@ namespace ControleTrocaOleo
                     con.ConnectionString = Properties.Settings.Default.Con01;
                     con.Open();
 
-                    string query = "SELECT * FROM usuarios WHERE USUARIO=@USUARIO AND SENHA=@SENHA";
+                    string query = "select email, senha from usuarios where email=@EMAIL AND senha=@SENHA";
 
                     SqlCommand cmdo = new SqlCommand(query, con);
 
-                    cmdo.Parameters.AddWithValue("@USUARIO", txtUsuario.Text);
+                    cmdo.Parameters.AddWithValue("@EMAIL", txtUsuario.Text);
                     cmdo.Parameters.AddWithValue("@SENHA", txtSenha.Text);
 
                     SqlDataReader dr = cmdo.ExecuteReader();
@@ -53,9 +53,10 @@ namespace ControleTrocaOleo
                     }
                     else
                     {
-                        txtUsuario.Text = "";
-                        txtSenha.Text = "";
+                        txtUsuario.Clear();
+                        txtSenha.Clear();
                         MessageBox.Show("Erro: Usuario e/ou Senha não correspondem!");
+                        txtUsuario.Focus();
                     }
 
                 }
@@ -73,6 +74,7 @@ namespace ControleTrocaOleo
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+                        
             Application.Exit();
         }
     }

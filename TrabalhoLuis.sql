@@ -70,3 +70,16 @@ select * from clientes;
 select * from oleos;
 
 select * from usuarios;
+
+create table controleTroca(
+codigo int primary key identity(1,1),
+data_troca datetime,
+nome_cliente varchar(100),
+nome_oleo varchar(100),
+categoria_oleo varchar(100),
+tipo_oleo varchar(100),
+fabricante varchar(100),
+valor_oleo decimal(10,3),
+qtd_oleo decimal(10,3),
+vlr_total decimal(10,2),
+email_cliente varchar(100))

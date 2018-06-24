@@ -152,6 +152,7 @@
             this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnLimpar
             // 
@@ -179,6 +180,7 @@
             this.dtpDataTroca.Name = "dtpDataTroca";
             this.dtpDataTroca.Size = new System.Drawing.Size(316, 31);
             this.dtpDataTroca.TabIndex = 13;
+            this.dtpDataTroca.ValueChanged += new System.EventHandler(this.dtpDataTroca_ValueChanged);
             // 
             // cmbCliente
             // 

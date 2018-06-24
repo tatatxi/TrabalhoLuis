@@ -13,9 +13,10 @@ namespace ControleTrocaOleo.Data_Acess
     public class AcessoDados
     {
         //CRIAR A CONEXÃO
+
         private SqlConnection CriarConexao()
         {
-            return new SqlConnection("STRING DE CONEXÃO");
+            return new SqlConnection("Data Source=LAPTOP-SMVO19P1;Integrated Security=SSPI;Initial Catalog=trabalhoLuis");
         }
 
         // Parametros  que irão para o banco de dados
@@ -100,9 +101,9 @@ namespace ControleTrocaOleo.Data_Acess
             }
             catch (Exception ex)
             {
+
                 throw new Exception(ex.Message);
             }
         }
     }
 }
-

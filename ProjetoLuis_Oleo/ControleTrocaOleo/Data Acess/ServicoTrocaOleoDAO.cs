@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControleTrocaOleo.Data_Acess
 {
-    class ServicoTrocaOleoDAO
+    public class ServicoTrocaOleoDAO
     {
     }
 }
